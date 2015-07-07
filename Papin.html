@@ -1,0 +1,137 @@
+<html>
+<center>
+<title>PAPIN</title>
+
+<body>
+
+    <canvas id="myCanvas" width="800" height="600" style="border:0px solid #000000;">
+    </canvas>
+	
+	<script src = "variaveis.js"></script>
+	<script src = "mouse.js"></script>
+	<script src = "menu.js"></script>
+	<script src = "pause.js"></script>
+	<script src = "credito.js"></script>
+	<script src = "comojogar.js"></script>
+	<script src = "pontcrono.js"></script>
+	<script src = "passagem.js"></script>
+	<script src = "fase1.js"></script>
+	<script src = "fase2.js"></script>
+	<script src = "fase3.js"></script>
+	<script src = "fadeIn.js"></script>
+	
+    <script>
+
+
+        function loop() {
+            if (main){ menuinicial.draw();
+				menuinicial.update();
+			}
+            if (play){
+				main = false;
+				primeira_fase.draw();
+				primeira_fase.update();
+				primeira_fase.ganhou();
+            }
+            if (play2) {
+           		segunda_fase.draw();
+				segunda_fase.update();
+				segunda_fase.ganhou();
+				intersecao1 = false;
+            }
+            if (play3) {
+               terceira_fase.draw();
+               terceira_fase.update();
+               terceira_fase.ganhou();
+               intersecao2 = false;
+            }
+            if (how){ comojogar1.draw();
+				comojogar1.update();}
+			
+            if (credit){ cred.draw();
+				cred.update();
+			}
+				
+            if (t.getTime() < 0) {
+                ctx.drawImage(gameover, gameoverM.x, gameoverM.y, gameoverM.w, gameoverM.h);
+                certo1_x = 1500;
+                certo2_x = 1500;
+                certo3_x = 1500;
+                certo4_x = 1500;
+                certo5_x = 1500;
+                certo6_x = 1500;
+
+                achado1_x = 1500;
+                achado2_x = 1500;
+                achado3_x = 1500;
+                achado6_x = 1500;
+                achado5_x = 1500;
+                achado4_x = 1500;
+            }
+            if (t.getTime() < 0) {
+                ctx.drawImage(gameover, gameoverM.x, gameoverM.y, gameoverM.w, gameoverM.h);
+                certo1_x = 1500;
+                certo2_x = 1500;
+                certo3_x = 1500;
+                certo4_x = 1500;
+                certo5_x = 1500;
+                certo6_x = 1500;
+
+                achado1_x = 1500;
+                achado2_x = 1500;
+                achado3_x = 1500;
+                achado6_x = 1500;
+                achado5_x = 1500;
+                achado4_x = 1500;
+            }
+            if (t.getTime() < 0) {
+                ctx.drawImage(gameover, gameoverM.x, gameoverM.y, gameoverM.w, gameoverM.h);
+                certo1_x = 1500;
+                certo2_x = 1500;
+                certo3_x = 1500;
+                certo4_x = 1500;
+                certo5_x = 1500;
+                certo6_x = 1500;
+
+                achado1_x = 1500;
+                achado2_x = 1500;
+                achado3_x = 1500;
+                achado6_x = 1500;
+                achado5_x = 1500;
+                achado4_x = 1500;
+            }
+			
+			if(pausar){
+			pausegame.draw();
+			pausegame.update();
+			}
+            
+			if(pausar2){
+			pausegame2.draw();
+			pausegame2.update();
+			}
+			
+			if(pausar3){
+			pausegame3.draw();
+			pausegame3.update();
+			}
+			
+			if (intersecao2){
+			mudanca2.draw();
+			mudanca2.update();
+			}
+
+			if (intersecao1){
+			mudanca.draw();
+			mudanca.update();
+			}
+			
+			drawFade(canvas, preto);
+
+            setTimeout(loop, 30);
+        }
+        loop();
+		
+    </script>
+</body>
+</html>
